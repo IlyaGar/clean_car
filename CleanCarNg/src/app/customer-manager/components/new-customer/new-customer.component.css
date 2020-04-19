@@ -1,0 +1,12 @@
+.new-cust {
+    margin: 0.5em;
+}
+.new-cust mat-form-field:not(:last-child) {
+    margin-right: 0.5em;
+}
+.bt-cust button:not(:last-child) {
+    margin-right: 0.5em;
+}
+mat-form-field  {
+    width: 20em;
+}

@@ -1,0 +1,10 @@
+mat-drawer {
+    width: 30%;
+}
+mat-drawer-container {
+    height: calc(100% - 3.5em);
+}
+mat-list-item:hover {
+    cursor: pointer;
+    color: lightblue;
+}

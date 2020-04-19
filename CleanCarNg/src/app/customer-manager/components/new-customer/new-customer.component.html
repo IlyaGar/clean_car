@@ -1,0 +1,33 @@
+<div class="new-cust">
+    <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput [(ngModel)]="firstName" placeholder="Input First Name" name="first" #first="ngModel" required maxlength="20">
+        <button mat-button *ngIf="first.value" matSuffix mat-icon-button aria-label="Clear" (click)="firstName=''">
+          <mat-icon>close</mat-icon>
+      </button>
+      <mat-error *ngIf="first.errors?.required">Value must be filled</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Second Name</mat-label>
+        <input matInput [(ngModel)]="secondName" placeholder="Input Second Name" name="second" #second="ngModel" required maxlength="20">
+        <button mat-button *ngIf="second.value" matSuffix mat-icon-button aria-label="Clear" (click)="secondName=''">
+          <mat-icon>close</mat-icon>
+      </button>
+      <mat-error *ngIf="second.errors?.required">Value must be filled</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput [(ngModel)]="phoneCustomer" placeholder="Input Phone" name="phone" #phone="ngModel" required maxlength="20">
+        <button mat-button *ngIf="phone.value" matSuffix mat-icon-button aria-label="Clear" (click)="phoneCustomer=''">
+          <mat-icon>close</mat-icon>
+      </button>
+      <mat-error *ngIf="phone.errors?.required">Value must be filled</mat-error>
+    </mat-form-field>
+
+    <div class="bt-cust">
+        <button mat-stroked-button color="primary" (click)="onClear()" [disabled]="!first.value && !second.value && !phone.value"> Clear </button>
+        <button mat-stroked-button color="primary" (click)="onCreate()" [disabled]="!first.value || !second.value || !phone.value"> Create </button>
+    </div>
+</div>

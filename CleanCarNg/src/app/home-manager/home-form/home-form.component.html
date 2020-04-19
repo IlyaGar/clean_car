@@ -1,0 +1,94 @@
+<mat-grid-list cols="1" class="myGridList" rowHeight="fit">
+    <mat-grid-tile>
+        <mat-card class="hello">
+            <mat-card-content>
+                <header>
+                    <span>Hello</span>
+                </header>
+                
+                <section>
+                    <span>Customer arrived</span>
+                </section>
+                <ng-container *ngIf="!selectedCustomer">
+                    <aside id="left">
+                        <span (click)="onOpenCreateCustomerForm()">
+                            New
+                        </span>
+                    </aside>
+                    <aside id="right">
+                        <span (click)="onOpenSelectCustomerForm()">
+                            Regular
+                        </span>
+                    </aside>
+                </ng-container>
+                <ng-container *ngIf="selectedCustomer">
+                    <section>
+                        <span>
+                            {{selectedCustomer.FirstName}} {{selectedCustomer.SecondName}}
+                            <mat-icon (click)="onClearCustomer()">close</mat-icon>
+                        </span>
+                    </section>
+                </ng-container>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="2">
+        <mat-card class="action">
+            
+            <ng-container *ngIf="listOperations.length > 0 && selectedCustomer">
+                <mat-card-title> Select operation </mat-card-title>
+                <mat-card-content>
+                <div class="table-container mat-elevation-z8">
+                    <table mat-table [dataSource]="dataSource" class="table-hover">
+
+                        <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event ? masterToggle() : null"
+                                        [checked]="selection.hasValue() && isAllSelected()"
+                                        [indeterminate]="selection.hasValue() && !isAllSelected()"
+                                        [aria-label]="checkboxLabel()">
+                            </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                        (change)="$event ? selection.toggle(row) : null"
+                                        [checked]="selection.isSelected(row)"
+                                        [aria-label]="checkboxLabel(row)">
+                            </mat-checkbox>
+                        </td>
+                        <td mat-footer-cell *matFooterCellDef> - </td>
+                        </ng-container>
+                    
+                        <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Operation </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+                        <td mat-footer-cell *matFooterCellDef> Total </td>
+                        </ng-container>    
+                        
+                    
+                        <ng-container matColumnDef="price">
+                        <th mat-header-cell *matHeaderCellDef> Price </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Price | currency}} </td>
+                        <td mat-footer-cell *matFooterCellDef> {{getTotalCost() | currency}} </td>
+                        </ng-container>      
+                    
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                            (click)="selection.toggle(row)">
+                        </tr>
+                        <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
+
+                    </table>
+                </div>
+                </mat-card-content>
+
+                <mat-card-actions>
+                    <button mat-stroked-button color="primary"> Cancel </button> 
+                    <button mat-stroked-button color="primary" [disabled]="selection.selected.length <= 0" (click)="onCreatOrder()"> Go </button>
+                </mat-card-actions>
+            </ng-container>
+
+        </mat-card>
+    </mat-grid-tile>
+
+</mat-grid-list>

@@ -1,0 +1,11 @@
+<mat-drawer-container class="drawer-container">
+    <mat-drawer mode="side" opened>
+        <mat-list>
+            <mat-list-item class="nav-item nav-link" [routerLink]="['list']"> List </mat-list-item>
+            <mat-list-item class="nav-item nav-link" [routerLink]="['new']"> Customers </mat-list-item>
+        </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

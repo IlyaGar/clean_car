@@ -1,0 +1,66 @@
+.table-container {
+    height: 30vh;
+    width: 50vw;
+    overflow: auto;
+}
+table {
+    width: 100%;
+}
+.mat-column-fname {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 30% !important;
+    width: 30% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    word-break: break-word;
+  
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+} 
+.mat-column-sname {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 30% !important;
+    width: 30% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    word-break: break-word;
+  
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+} 
+.mat-column-phone {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 30% !important;
+    width: 30% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    word-break: break-word;
+  
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+} 
+.mat-dialog-actions {
+    margin: 1em 0 0 0;
+    justify-content: flex-end;
+}
+button:first-child {
+    margin-right: 0.2em;
+}
+.select-row {
+    background-color: rgba(102, 51, 153, 0.288);
+}
+td:hover {
+    cursor: pointer;
+}

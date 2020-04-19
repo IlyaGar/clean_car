@@ -1,0 +1,64 @@
+<div class="example-container mat-elevation-z8">
+    <table mat-table [dataSource]="listCustomers" class="table-hover table-container" multiTemplateDataRows >
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element" >  {{element.FirstName}} {{element.SecondName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="count">
+            <th mat-header-cell *matHeaderCellDef> Count operations </th>
+            <td mat-cell *matCellDef="let element" > {{element.CountOperations}} </td>
+        </ng-container>   
+
+        <ng-container matColumnDef="sum">
+            <th mat-header-cell *matHeaderCellDef> Total amount </th>
+            <td mat-cell *matCellDef="let element" > {{element.SumPrice}} </td>
+        </ng-container>      
+                
+        <ng-container matColumnDef="expandedDetail">
+            <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+                <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+
+                    <!-- <mat-spinner></mat-spinner> -->
+
+                    <table mat-table [dataSource]="element.CustomerOperations" class="mat-elevation-z8">
+
+                        <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Operation </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+                        </ng-container>
+                    
+                        <ng-container matColumnDef="date">
+                        <th mat-header-cell *matHeaderCellDef> Date </th>
+                        <td mat-cell *matCellDef="let element"> {{element.DateTime | date}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="price">
+                            <th mat-header-cell *matHeaderCellDef> Price </th>
+                            <td mat-cell *matCellDef="let element"> {{element.Price}} </td>
+                        </ng-container>         
+                    
+                        <ng-container matColumnDef="action">
+                            <th mat-header-cell *matHeaderCellDef> <mat-icon (click)="onClickPdfReport(element)">picture_as_pdf</mat-icon> </th>
+                            <td mat-cell *matCellDef="let element"> </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
+        <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+            class="example-element-row"
+            [class.example-expanded-row]="expandedElement === element"
+            (click)="expandedElement = expandedElement === element ? null : element; onClickCustomer(element)">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+
+    </table>
+</div>

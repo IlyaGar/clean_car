@@ -1,0 +1,125 @@
+mat-grid-tile {
+    background-color: rgba(128, 128, 128, 0.384);
+}
+.myGridList {
+    height: calc(100% - 3.5em);
+}
+.hello {
+    width: 50%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+}
+.action {
+    width: 70%;
+    height: 90%;
+    /* display: flex;
+    align-items: center; */
+}
+
+span {
+    background: #2db34a;
+    border-radius: 6px;
+    color: #fff;
+    display: block;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+    padding: 10px 10px;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+}
+header, section, aside#left, aside#right {
+    margin: 0 1.5% 10px 1.5%;
+    width: 95%;
+}
+aside#left {
+    float: left;
+    width: 50%;
+}
+mat-card-content {
+    width: 100%;
+}
+aside span:hover {
+    background: rebeccapurple;
+    cursor: pointer;
+}
+
+
+.mat-column-select {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 15% !important;
+    width: 15% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    word-break: break-word;
+  
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+} 
+.mat-column-name {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 30% !important;
+    width: 30% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    word-break: break-word;
+  
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+} 
+.mat-column-price {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 30% !important;
+    width: 30% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    word-break: break-word;
+  
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+.table-container {
+    /* margin-top: -5em !important; */
+    height: 40vh;
+    overflow: auto;
+    width: 100%;
+}
+table {
+    width: 100%;
+}
+tr.mat-footer-row {
+    font-weight: bold;
+}  
+.mat-table-sticky {
+    border-top: 1px solid #e0e0e0;
+}
+mat-icon {
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
+}
+mat-icon:hover {
+    color: rebeccapurple;
+
+    cursor: pointer;
+}
+.mat-dialog-actions {
+    margin: 1em 0 0 0;
+    justify-content: flex-end;
+}
+button:first-child {
+    margin-right: 0.2em;
+}
