@@ -70,7 +70,8 @@ namespace CleanCar.WEB.App_Start
             kernel.Bind<IOperationService>().To<OperationService>();
             kernel.Bind<IOrderService>().To<OrderService>();
             kernel.Bind<IPdfReportService>().To<PdfReportService>();
-
+            kernel.Bind<ICreaterTemplate>().To<CreaterTemplate>();
+            
             kernel.Bind<ICustomerRepository>().To<CustomerRepository>();
             kernel.Bind<IOperationRepository>().To<OperationRepository>();
             kernel.Bind<IOrderRepository>().To<OrderRepository>();
