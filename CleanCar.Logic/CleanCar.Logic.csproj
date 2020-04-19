@@ -66,6 +66,8 @@
     <Compile Include="MappingProfiles\MappingProfile.cs" />
     <Compile Include="Models\CustomerDTO.cs" />
     <Compile Include="Models\OrderDTO.cs" />
+    <Compile Include="Services\CreaterTemplate.cs" />
+    <Compile Include="Services\IServices\ICreaterTemplate.cs" />
     <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\CustomerService.cs" />
     <Compile Include="Services\IServices\IOrderService.cs" />
