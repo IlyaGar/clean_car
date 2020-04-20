@@ -92,7 +92,8 @@ namespace CleanCar.Logic.Services
                     number++.ToString(), 
                     operation.Operation.Name, 
                     operation.DateTime.ToString("yyyy-MM-dd"),
-                    operation.Price.ToString() });
+                    operation.Price.ToString() 
+                });
             }
             listStringOperations.AddRange(new List<string>() { "Total", $"{customer.Orders.Select(c => c.Price).Count()}", "", $"{customer.Orders.Select(c => c.Price).Sum()}" });
             if (countRow - 34 < 0)
@@ -117,8 +118,8 @@ namespace CleanCar.Logic.Services
             {
                 dynamic table = textFrameThanks.Tables.Add();
                 table.BodyRowCount = 34;
-                table.ColumnCount = 3;
-                var listFirstTAble = listStringOperations.Take(34 * 3).ToList();
+                table.ColumnCount = 4;
+                var listFirstTAble = listStringOperations.Take(34 * 4).ToList();
                 table.Contents = listFirstTAble.ToArray();
 
                 dynamic paragraphThanks = textFrameThanks.Paragraphs[1];
